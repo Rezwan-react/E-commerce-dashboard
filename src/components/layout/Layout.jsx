@@ -6,9 +6,11 @@ import { Outlet } from 'react-router'
 function Layout() {
     return (
         <>
-            <Heading/>
-            <Navbar />
-            <Outlet />
+            <Heading />
+            <div className='flex gap-2'>
+                <Navbar />
+                <Outlet />
+            </div>
         </>
     )
 }

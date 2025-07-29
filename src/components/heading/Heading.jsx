@@ -13,8 +13,8 @@ function Heading() {
                         <img src="logo.png" alt="Logo" />
                     </div>
                     <div className='flex items-center gap-4  bg-[#F5F5FA] pl-4 rounded-[12px]'>
-                        <button className='text-[25px] active:scale-95'><CiSearch /></button>
-                        <input type="text" placeholder="Search....." className="w-[350px] py-3.5 bg-[#F5F5FA] pl-4 rounded-[12px] outline-none" />
+                        <button className='active:scale-95'><CiSearch className='text-[25px] '/></button>
+                        <input type="text" placeholder="Search....." className="w-[350px] text-[14px] font-semibold font-poppins text-[#7E7E8F] py-3.5 bg-[#F5F5FA] pl-4 rounded-[12px] outline-none" />
                     </div>
                     <div>
                         <ul className='flex items-center gap-4'>
@@ -26,7 +26,7 @@ function Heading() {
                     <div className='flex items-center gap-4'>
                         <button ><FaRegMessage className='text-[20px] text-[#7E7E8F] ' /></button>
                         <button ><IoMdNotificationsOutline className='text-[24px] text-[#7E7E8F] ' /></button>
-                        <div  className='w-[48px] h-[48px] rounded-full overflow-hidden'>
+                        <div className='w-[48px] h-[48px] rounded-full overflow-hidden'>
                             <img src="/images/Profile.jpg" alt="Profile" className='w-full h-full object-cover' />
                         </div>
                     </div>
