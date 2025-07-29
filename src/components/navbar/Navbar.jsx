@@ -23,7 +23,7 @@ function Navbar() {
               <li><Link to="#">Category 2</Link></li>
               <li><Link to="#">Category 3</Link></li>
             </ul>
-            <button className='text-[14px] font-semibold font-poppins text-[#7364DB] pt-2 '>Add Category</button>
+            <button className='text-[14px] font-semibold font-poppins text-[#7364DB] pt-2 active:scale-95'>Add Category</button>
           </div>
         </div>
       </nav>
