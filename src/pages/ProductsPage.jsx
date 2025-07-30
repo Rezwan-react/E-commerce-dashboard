@@ -5,8 +5,10 @@ import CommonHead from '../components/commonHead/CommonHead'
 function ProductsPage() {
   return (
     <>
-      {/* <CommonHead CommonHead1Title="All Products" /> */}
-      <Products />
+      <div className='w-full'>
+        <CommonHead CommonHead1Title="All Products" />
+        <Products />
+      </div>
     </>
   )
 }

@@ -4,32 +4,43 @@ import React from 'react'
 function Products() {
     return (
         <>
-            <section className='w-[1136px] bg-[#fff] p-6'>
+            <section className='w-[1136px] bg-[#fff] p-6 mt-[68px] ml-6 rounded-2xl'>
                 <div className="container">
-                    <div className='bg-[#E8EDF2] p-4 rounded-lg'>
-                        <ul className='flex justify-between items-center  '>
-                            <li>Image</li>
-                            <li>Name</li>
-                            <li>SKU</li>
-                            <li>Price</li>
-                            <li>Status</li>
-                            <li>Quantity</li>
-                            <li>Rating</li>
-                            <li>Sales</li>
-                        </ul>
-                        <div className='flex justify-between items-center  '>
-                            <img src="/images/p.png" alt="Product One" />
-                            <div className='flex justify-between items-center w-full'>
-                                <div className='flex flex-col justify-center items-start'>
-                                    <p>Product One</p>
-                                    <p>Lorem ipsum dolor </p>
+                    <div className='w-[1086px] p-4 rounded-lg'>
+                        <div className='grid grid-cols-8 gap-4 text-[12px] font-semibold font-poppins text-[#7E7E8F] mb-4'>
+                            <div className='flex flex-col items-center'>
+                                <h2>Image</h2>
+                                <div className='w-[82px] h-[82px] flex items-center justify-center  border-2 border-[#E8EDF2] rounded-[8px] overflow-hidden'>
+                                    <img src="/images/p.png" alt="Product One" className='w-[82px] h-[82px] object-cover rounded-[8px] mt-2' />
                                 </div>
-                                <p>SKU12345</p>
-                                <p>$29.99</p>
-                                <p>In Stock</p>
-                                <p>100</p>
-                                <p>4.5/5</p>
-                                <p>50 Sales</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>Name</h2>
+                                <p className='mt-2 text-[14px] font-semibold font-poppins text-[#262631]'>Product One</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>SKU</h2>
+                                <p className='mt-2 text-[14px] font-normal font-poppins text-[#7E7E8F]'>SKU12345</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>Price</h2>
+                                <p className='mt-2 text-[14px] font-semibold font-poppins text-[#07070C]'>$29.99</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>Status</h2>
+                                <p className='mt-2 text-[14px] font-semibold font-poppins text-[#07070C]'>Activek</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>Quantity</h2>
+                                <p className='mt-2 text-[14px] font-normal font-poppins text-[#7E7E8F]'>100</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>Rating</h2>
+                                <p className='mt-2 text-[14px] font-normal font-poppins text-[#FEA73E]'>4.5/5</p>
+                            </div>
+                            <div className='flex flex-col items-center'>
+                                <h2 className='text-[12px] font-semibold font-poppins mb-[14px] text-[#7E7E8F]'>Sales</h2>
+                                <p className='mt-2 text-[14px] font-semibold font-poppins text-[#07070C]'>50 Sales</p>
                             </div>
                         </div>
                     </div>
