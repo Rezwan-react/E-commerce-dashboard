@@ -1,8 +1,13 @@
 import React from 'react'
+import Products from '../components/products/Products'
+import CommonHead from '../components/commonHead/CommonHead'
 
 function ProductsPage() {
   return (
-    <div>ProductsPage</div>
+    <>
+      {/* <CommonHead CommonHead1Title="All Products" /> */}
+      <Products />
+    </>
   )
 }
 
