@@ -9,6 +9,7 @@ import PaymentsPage from './pages/PaymentsPage'
 import TransactionsPage from './pages/TransactionsPage'
 import ClientsPage from './pages/ClientsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
+import OrderDetailspage from './pages/OrderDetailspage'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path='/products' element={<ProductsPage />} />
             <Route path='/productDetails' element={<ProductDetailsPage />} />
             <Route path='/orders' element={<OrdersPage />} />
+            <Route path='/orderDetails' element={<OrderDetailspage />} />
             <Route path='/payments' element={<PaymentsPage />} />
             <Route path='/transactions' element={<TransactionsPage />} />
             <Route path='/clients' element={<ClientsPage />} />
