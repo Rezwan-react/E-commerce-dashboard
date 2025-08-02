@@ -8,7 +8,7 @@ function Navbar() {
         <div className="container">
           <div>
             <ul className='flex flex-col gap-[20px]'>
-              <NavLink to="/dashboard" className={({ isActive }) => isActive ? 'text-[14px] font-semibold font-poppins text-[#fff] px-[21px] py-[17px] bg-[#7364DB] rounded-2xl' : "text-[14px] font-semibold font-poppins text-[#7E7E8F] px-[21px] py-[17px]"}>Dashboard</NavLink>
+              <NavLink to="/" className={({ isActive }) => isActive ? 'text-[14px] font-semibold font-poppins text-[#fff] px-[21px] py-[17px] bg-[#7364DB] rounded-2xl' : "text-[14px] font-semibold font-poppins text-[#7E7E8F] px-[21px] py-[17px]"}>Dashboard</NavLink>
               <NavLink to="/products" className={({ isActive }) => isActive ? 'text-[14px] font-semibold font-poppins text-[#fff] px-[21px] py-[17px] bg-[#7364DB] rounded-2xl' : "text-[14px] font-semibold font-poppins text-[#7E7E8F] px-[21px] py-[17px]"}>Products</NavLink>
               <NavLink to="/productDetails" className={({ isActive }) => isActive ? 'text-[14px] font-semibold font-poppins text-[#fff] px-[21px] py-[17px] bg-[#7364DB] rounded-2xl' : "text-[14px] font-semibold font-poppins text-[#7E7E8F] px-[21px] py-[17px]"}>Product Details</NavLink>
               <NavLink to="/orders" className={({ isActive }) => isActive ? 'text-[14px] font-semibold font-poppins text-[#fff] px-[21px] py-[17px] bg-[#7364DB] rounded-2xl' : "text-[14px] font-semibold font-poppins text-[#7E7E8F] px-[21px] py-[17px]"}>Orders</NavLink>

@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 import Layout from './components/layout/Layout'
-import HomePage from './pages/HomePage'
 import DashboardPage from './pages/DashboardPage'
 import ProductsPage from './pages/ProductsPage'
 import OrdersPage from './pages/OrdersPage'
@@ -18,8 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path='/dashboard' element={<DashboardPage />} />
+            <Route index element={<DashboardPage />} />
             <Route path='/products' element={<ProductsPage />} />
             <Route path='/productDetails' element={<ProductDetailsPage />} />
             <Route path='/orders' element={<OrdersPage />} />
