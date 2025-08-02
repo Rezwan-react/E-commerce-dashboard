@@ -7,13 +7,13 @@ import { TiExport } from 'react-icons/ti';
 function Heading() {
     return (
         <>
-            <header className="px-[38px] py-7 bg-[#FFFFFF] ">
+            <header className="px-[38px] py-7 bg-[#FFFFFF]">
                 <div className="container flex justify-between items-center ">
                     <div>
                         <img src="logo.png" alt="Logo" />
                     </div>
                     <div className='flex items-center gap-4  bg-[#F5F5FA] pl-4 rounded-[12px]'>
-                        <button className='active:scale-95'><CiSearch className='text-[25px] '/></button>
+                        <button className='active:scale-95'><CiSearch className='text-[25px] ' /></button>
                         <input type="text" placeholder="Search....." className="w-[350px] text-[14px] font-semibold font-poppins text-[#7E7E8F] py-3.5 bg-[#F5F5FA] pl-4 rounded-[12px] outline-none" />
                     </div>
                     <div>
