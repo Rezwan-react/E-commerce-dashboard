@@ -10,7 +10,6 @@ import ClientsPage from './pages/ClientsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
 import OrderDetailspage from './pages/OrderDetailspage'
 import Login from './components/login/Login'
-import Register from './components/register/Register'
 
 function App() {
 
@@ -19,7 +18,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
           <Route path='/' element={<Layout />}>
             <Route index element={<DashboardPage />} />
             <Route path='/products' element={<ProductsPage />} />
