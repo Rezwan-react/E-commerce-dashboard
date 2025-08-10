@@ -1,0 +1,28 @@
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+const authSlice = createSlice({
+    name: "auth",
+    initialState: {
+        user: JSON.parse(localStorage.getItem("loggedUser")) || null,
+    },
+    reducers: {
+        loggedUser: (state, actions) => {
+            state.user = actions.payload;
+
+        },
+        logOutUser: (state) => {
+            console.log(state.value);
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+        // Update User
+        // .addCase(updateUserThunk.fulfilled, (state, actions) => {
+        //   state.user = actions.payload;
+        //   localStorage.setItem("loggedUser", JSON.stringify(actions.payload));
+        // })
+
+    },
+});
+
+export const { loggedUser, logOutUser } = authSlice.actions;
+export default authSlice.reducer;

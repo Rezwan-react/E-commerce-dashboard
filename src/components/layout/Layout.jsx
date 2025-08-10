@@ -1,9 +1,16 @@
 import React from 'react'
 import Navbar from '../navbar/Navbar'
 import Heading from '../heading/heading'
-import { Outlet } from 'react-router'
+import { Navigate, Outlet } from 'react-router'
+import { useSelector } from 'react-redux';
 
 function Layout() {
+    const userData = useSelector((state) => state.authSlice.user);
+
+      if(!userData){
+    return <Navigate to="/login"/>
+  }
+
     return (
         <>
             <Heading />

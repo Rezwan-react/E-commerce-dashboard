@@ -10,6 +10,7 @@ import ClientsPage from './pages/ClientsPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
 import OrderDetailspage from './pages/OrderDetailspage'
 import Login from './components/login/Login'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
 
@@ -29,6 +30,14 @@ function App() {
             <Route path='/clients' element={<ClientsPage />} />
           </Route>
         </Routes>
+          <ToastContainer 
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              closeOnClick={false}
+              rtl={false}
+              theme="dark"
+          />
       </BrowserRouter>
     </>
   )
