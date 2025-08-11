@@ -12,6 +12,7 @@ import OrderDetailspage from './pages/OrderDetailspage'
 import Login from './components/login/Login'
 import { ToastContainer } from 'react-toastify'
 import Profile from './components/profile/Profile'
+import AddCategory from './components/addCategory/AddCategory'
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/payments' element={<PaymentsPage />} />
             <Route path='/transactions' element={<TransactionsPage />} />
             <Route path='/clients' element={<ClientsPage />} />
+            <Route path='/addCategory' element={<AddCategory />} />
           </Route>
         </Routes>
           <ToastContainer 
