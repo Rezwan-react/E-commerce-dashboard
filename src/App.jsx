@@ -11,6 +11,7 @@ import ProductDetailsPage from './pages/ProductDetailsPage'
 import OrderDetailspage from './pages/OrderDetailspage'
 import Login from './components/login/Login'
 import { ToastContainer } from 'react-toastify'
+import Profile from './components/profile/Profile'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Layout />}>
             <Route index element={<DashboardPage />} />
+            <Route path='/profile' element={<Profile />} />
             <Route path='/products' element={<ProductsPage />} />
             <Route path='/productDetails' element={<ProductDetailsPage />} />
             <Route path='/orders' element={<OrdersPage />} />
