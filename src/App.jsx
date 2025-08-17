@@ -34,14 +34,14 @@ function App() {
             <Route path='/addCategory' element={<AddCategory />} />
           </Route>
         </Routes>
-          <ToastContainer 
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar={false}
-              closeOnClick={false}
-              rtl={false}
-              theme="dark"
-          />
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          closeOnClick={false}
+          rtl={false}
+          theme="dark"
+        />
       </BrowserRouter>
     </>
   )

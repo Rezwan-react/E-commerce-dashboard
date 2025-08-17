@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { BiCalendar, BiCamera, BiEdit, BiMapPin, BiSave } from 'react-icons/bi'
-import { RiMvAiLine } from 'react-icons/ri'
 import { FaUserShield, FaUser } from 'react-icons/fa'
 import { BsEye, BsEyeSlash } from 'react-icons/bs' // <-- Add this import
+import { useSelector } from 'react-redux'
+import { MdEmail } from 'react-icons/md'
 
 function Profile() {
+    const userData = useSelector((state) => state.authSlice.user);
     const [isEditing, setIsEditing] = useState(false);
     const [activeTab, setActiveTab] = useState('personal');
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    console.log(userData);
 
     const [form, setForm] = useState({
         firstName: "",
@@ -49,11 +52,20 @@ function Profile() {
                         <div className="w-[400px] bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                             <div className="text-center">
                                 <div className="relative inline-block">
-                                    <img
-                                        src=""
-                                        alt="Profile"
-                                        className="h-24 w-24 rounded-full object-cover mx-auto mb-4"
-                                    />
+                                    {
+                                        userData?.avatar
+                                            ?
+                                            <img
+                                                src={userData?.avatar || ""}
+                                                alt="Profile"
+                                                className="h-24 w-24 rounded-full object-cover mx-auto mb-4"
+                                            />
+                                            :
+                                            <h2 className="flex justify-center items-center h-24 w-24 rounded-full object-cover mx-auto mb-4 text-3xl font-bold text-gray-900 bg-blue-400">
+                                                {userData?.name[0]}
+                                            </h2>
+                                    }
+
                                     <label className="absolute bottom-0 right-0 bg-primary-600 text-white p-2 rounded-full cursor-pointer hover:bg-primary-700 transition-colors">
                                         <BiCamera className="h-4 w-4" />
                                         <input type="file" accept="image/*" className="hidden" />
@@ -61,23 +73,22 @@ function Profile() {
                                 </div>
 
                                 <h2 className="text-xl font-bold text-gray-900 mb-1">
-                                    {form.Name || " Name"}
+                                    {userData?.name || " Name"}
                                 </h2>
-                                <p className="text-gray-600 mb-2">Role</p>
-                                <p className="text-sm text-gray-500 mb-4">{form.department || "Department"}</p>
+                                <p className="text-gray-600 mb-2 capitalize">{userData?.role || "Role"}</p>
 
                                 <div className="space-y-2 text-sm">
                                     <div className="flex items-center justify-center space-x-2">
-                                        <RiMvAiLine className="h-4 w-4 text-gray-400" />
-                                        <span className="text-gray-600">{form.email || "email"}</span>
-                                    </div>
-                                    <div className="flex items-center justify-center space-x-2">
-                                        <BiMapPin className="h-4 w-4 text-gray-400" />
-                                        <span className="text-gray-600">{form.location || "location"}</span>
+                                        <MdEmail className="h-4 w-4 text-gray-400" />
+                                        <span className="text-gray-600">{userData?.email || "email"}</span>
                                     </div>
                                     <div className="flex items-center justify-center space-x-2">
                                         <BiCalendar className="h-4 w-4 text-gray-400" />
-                                        <span className="text-gray-600">Joined</span>
+                                        <span className="text-gray-600">
+                                          {userData?.createdAt
+                                            ? new Date(userData.createdAt).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' })
+                                            : "Joined"}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -112,22 +123,74 @@ function Profile() {
                         {activeTab === 'personal' && (
                             <form className="flex flex-col space-y-6">
                                 <div className="w-[600px] grid grid-cols-1 gap-6 sm:grid-cols-2 border border-gray-200 p-6">
-                                    {["firstName", "lastName", "email", "phone", "department", "location"].map((field, idx) => (
-                                        <div key={idx}>
-                                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                                                {field.charAt(0).toUpperCase() + field.slice(1)}
-                                            </label>
-                                            <input
-                                                type={field === "email" ? "email" : "text"}
-                                                name={field}
-                                                value={form[field]}
-                                                onChange={handleChange}
-                                                className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none"
-                                                required={field === "firstName" || field === "lastName" || field === "email"}
-                                                disabled={!isEditing}
-                                            />
-                                        </div>
-                                    ))}
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                        <input
+                                            type="text"
+                                            name="firstName"
+                                            value={userData?.name.split(" ")[0]}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none"
+                                            required
+                                            disabled={!isEditing}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                        <input
+                                            type="text"
+                                            name="lastName"
+                                            value={userData?.name.split(" ")[1]}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none"
+                                            required
+                                            disabled={!isEditing}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={userData?.email}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none"
+                                            required
+                                            disabled={!isEditing}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                                        <input
+                                            type="text"
+                                            name="phone"
+                                            value={userData?.phone}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none"
+                                            disabled={!isEditing}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Department</label>
+                                        <input
+                                            type="text"
+                                            name="department"
+                                            value={userData?.role}
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none capitalize"
+                                            disabled={!isEditing}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-sm font-medium text-gray-700 mb-2">Image</label>
+                                        <input
+                                            type="file"
+                                            name="image"
+                                            onChange={handleChange}
+                                            className="w-full px-3 py-2 border border-gray-300 rounded-lg outline-none"
+                                            disabled={!isEditing}
+                                        />
+                                    </div>
                                     <div className="sm:col-span-2 flex justify-end mt-4">
                                         {!isEditing ? (
                                             <button
