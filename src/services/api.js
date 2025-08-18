@@ -29,3 +29,13 @@ export const authServices = {
     },
 };
 
+export const categoryServices = {
+    createCategory: async (data) => {
+       const res = await api.post("/product/createcategory",  data, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+        return res.data;
+    }
+}
