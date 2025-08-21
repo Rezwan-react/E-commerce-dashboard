@@ -34,7 +34,7 @@ function App() {
             <Route path='/transactions' element={<TransactionsPage />} />
             <Route path='/clients' element={<ClientsPage />} />
             <Route path='/category' element={<CategoryPage />} />
-            <Route path='/categoryDetails' element={<CategoryDetails />} />
+            <Route path='/categoryDetails/:id' element={<CategoryDetails />} />
             <Route path='/AddCategory' element={<AddCategory />} />
           </Route>
         </Routes>
