@@ -4,7 +4,7 @@ import { Link, Links, NavLink } from 'react-router'
 function Navbar() {
   return (
     <>
-      <nav className='w-[256px] px-[25px] pt-[25px] bg-[#FFFFFF] '>
+      <nav className='w-[256px] px-[25px] pt-[25px] bg-[#FFFFFF] mt-20 fixed z-50'>
         <div className="container">
           <div>
             <ul className='flex flex-col gap-[20px]'>

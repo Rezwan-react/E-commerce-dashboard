@@ -19,8 +19,7 @@ function CategoryDetails() {
         <section className="w-[1145px] bg-white p-6 mt-[68px] ml-6 rounded-2xl shadow">
             <div className="min-h-screen">
                 {/* Top Section */}
-                <div className="flex justify-between items-center mb-8">
-                    <h1 className="text-2xl font-bold text-gray-800">Categories</h1>
+                <div className="flex justify-end items-center mb-8 ">
                     {userData?.role === "admin" && (
                         <Link
                             to="/AddCategory"

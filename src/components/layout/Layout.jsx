@@ -5,21 +5,23 @@ import { Navigate, Outlet } from 'react-router'
 import { useSelector } from 'react-redux';
 
 function Layout() {
-    const userData = useSelector((state) => state.authSlice.user);
+  const userData = useSelector((state) => state.authSlice.user);
 
-      if(!userData){
-    return <Navigate to="/login"/>
+  if (!userData) {
+    return <Navigate to="/login" />
   }
 
-    return (
-        <>
-            <Heading />
-            <div className='flex gap-2'>
-                <Navbar />
-                <Outlet />
-            </div>
-        </>
-    )
+  return (
+    <>
+      <Heading />
+      <div className="flex">
+        <Navbar />
+        <div className="flex-1 ml-[256px] p-6 mt-20">
+          <Outlet />
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Layout
