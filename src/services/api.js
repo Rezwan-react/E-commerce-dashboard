@@ -10,7 +10,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-    const token =  getCookieByName("token");
+    const token = getCookieByName("token");
     if (token) {
         config.headers.Authorization = token;
     }
@@ -43,6 +43,15 @@ export const categoryServices = {
         const res = await api.get(`/product/categories`);
         return res.data;
     },
-   
-  
+};
+
+export const productServices = {
+    createProduct: async (data) => {
+        const res = await api.post('/product/create', data, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
+        });
+        return res.data;
+    }
 };

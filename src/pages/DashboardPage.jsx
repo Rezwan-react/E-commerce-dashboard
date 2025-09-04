@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CommonHead from '../components/commonHead/CommonHead'
 import Card from '../components/Dashboard/card/Card'
 import Chart from '../components/Dashboard/chart'
+import { categoryServices } from '../services/api';
+import { useDispatch } from 'react-redux';
+import { categories } from '../store/slices/categorySlice';
 
 function DashboardPage() {
+   const dispatch = useDispatch()
+
+  useEffect(() => {
+    (async () => {
+      const data = await categoryServices.categoryList();
+      // setCategories(data?.cateagors || []);
+      dispatch(categories(data))
+    })();
+  }, []);
+
   return (
     <div className='bg-[#E8EDF2] w-full'>
       <CommonHead CommonHead1Title="Dashboard" />

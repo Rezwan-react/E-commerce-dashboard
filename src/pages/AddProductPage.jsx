@@ -1,16 +1,16 @@
 import React from 'react'
 import CommonHead from '../components/commonHead/CommonHead'
-import ProductDetails from '../components/productDetails/ProductDetails'
+import AddProduct from '../components/productDetails/AddProduct'
 
-function ProductDetailsPage() {
+function AddProductPage() {
   return (
     <>
     <div className='w-full'> 
         <CommonHead CommonHead1Title="Product Details" />
-        <ProductDetails/>
+        <AddProduct/>
     </div>
     </>
   )
 }
 
-export default ProductDetailsPage
+export default AddProductPage

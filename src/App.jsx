@@ -7,7 +7,6 @@ import OrdersPage from './pages/OrdersPage'
 import PaymentsPage from './pages/PaymentsPage'
 import TransactionsPage from './pages/TransactionsPage'
 import ClientsPage from './pages/ClientsPage'
-import ProductDetailsPage from './pages/ProductDetailsPage'
 import OrderDetailspage from './pages/OrderDetailspage'
 import Login from './components/login/Login'
 import { ToastContainer } from 'react-toastify'
@@ -15,6 +14,7 @@ import Profile from './components/profile/Profile'
 import CategoryPage from './pages/CategoryPage'
 import CategoryDetails from './components/category/CategoryDetails'
 import AddCategory from './components/category/AddCategory'
+import AddProductPage from './pages/AddProductPage'
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
             <Route index element={<DashboardPage />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/products' element={<ProductsPage />} />
-            <Route path='/productDetails' element={<ProductDetailsPage />} />
+            <Route path='/addproduct/' element={<AddProductPage />} />
             <Route path='/orders' element={<OrdersPage />} />
             <Route path='/orderDetails' element={<OrderDetailspage />} />
             <Route path='/payments' element={<PaymentsPage />} />

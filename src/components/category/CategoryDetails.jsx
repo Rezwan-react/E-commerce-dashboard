@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
 import { Link } from "react-router";
 import { useSelector } from "react-redux";
-import { categoryServices } from "../../services/api";
 
 function CategoryDetails() {
     const userData = useSelector((state) => state.authSlice.user);
@@ -10,11 +9,10 @@ function CategoryDetails() {
 
     useEffect(() => {
         (async () => {
-            const data = await categoryServices.categoryList();
-            setCategories(data?.cateagors || []);
-        })();
-    }, []);
-
+            const data = await categorySercice.categoryList()
+            dispatch(categories(data))
+        })()
+    }, [])
     return (
         <section className="w-[1145px] bg-white p-6 mt-[68px] ml-6 rounded-2xl shadow">
             <div className="min-h-screen">
@@ -60,10 +58,10 @@ function CategoryDetails() {
                                 <div className="flex justify-between items-center mt-3">
                                     <span
                                         className={`text-xs px-2 py-1 rounded-full font-medium ${item?.status === "active"
-                                                ? "bg-green-100 text-green-600"
-                                                : item?.status === "Inactive"
-                                                    ? "bg-red-100 text-red-600"
-                                                    : "bg-yellow-100 text-yellow-600"
+                                            ? "bg-green-100 text-green-600"
+                                            : item?.status === "Inactive"
+                                                ? "bg-red-100 text-red-600"
+                                                : "bg-yellow-100 text-yellow-600"
                                             }`}
                                     >
                                         {item?.status}

@@ -37,7 +37,7 @@ function Login() {
     return (
         <>
             <section className='flex items-center justify-center h-screen bg-[#e8e8e8]'>
-                <div className="w-[330px] p-10 rounded-xl bg-[#dde1e7] shadow-[inset_-3px_-3px_7px_#ffffff73,inset_2px_2px_5px_rgba(94,104,121,0.288)]">
+                <div className="w-[430px] p-10 rounded-xl bg-[#dde1e7] shadow-[inset_-3px_-3px_7px_#ffffff73,inset_2px_2px_5px_rgba(94,104,121,0.288)]">
                     <div className="text-[33px] font-semibold mb-9 text-[#595959]">Login</div>
                     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
                         {/* Email Field */}
