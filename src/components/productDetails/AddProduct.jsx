@@ -25,9 +25,8 @@ function AddProduct() {
     ]);
 
     const navigate = useNavigate();
-    const categoriesData = useSelector(
-        (state) => state.categorySlice.categories
-    );
+
+    const categoriesData = useSelector((state) => state.categorySlice.categories);
     console.log(categoriesData);
 
     // --- INPUT HANDLERS ---
@@ -35,10 +34,10 @@ function AddProduct() {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
-    // const handleInputChanges = (e) => {
-    //         const { categoryName, value } = e.target;
-    //         setFormData((prev) => ({ ...prev, [categoryName]: value }));
-    //     };
+    const handleInputChanges = (e) => {
+        const { categoryName, value } = e.target;
+        setFormData((prev) => ({ ...prev, [categoryName]: value }));
+    };
     // --- MAIN IMAGE ---
     const handleMainImageUpload = (e) => {
         setFormData((prev) => ({ ...prev, mainImg: e.target.files[0] }));
@@ -151,15 +150,14 @@ function AddProduct() {
                             <label className="font-medium text-[#07070C]">Category</label>
                             <select
                                 name="category"
-                                value={formData.category}
-                                onChange={handleInputChange}
+                                onChange={handleInputChanges}
                                 className="w-full px-4 py-3 border rounded-md"
                             >
                                 <option value="">Select category</option>
                                 {categoriesData?.length > 0 ? (
                                     categoriesData.map((item) => (
                                         <option key={item._id} value={item._id}>
-                                            {item.name}
+                                            {item.categoryName}
                                         </option>
                                     ))
                                 ) : (
