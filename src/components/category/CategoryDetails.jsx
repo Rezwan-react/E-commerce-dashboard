@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { FiMoreVertical } from "react-icons/fi";
 import { Link } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { categoryServices } from "../../services/api";
 
 function CategoryDetails() {
     const userData = useSelector((state) => state.authSlice.user);
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        (async () => {
-            const data = await categorySercice.categoryList()
-            dispatch(categories(data))
-        })()
-    }, [])
+       (async () => {
+         const data = await categoryServices.categoryList();
+         setCategories(data?.cateagors || []);
+        
+       })();
+     }, []);
+    
     return (
         <section className="w-[1145px] bg-white p-6 mt-[68px] ml-6 rounded-2xl shadow">
             <div className="min-h-screen">
@@ -39,7 +42,7 @@ function CategoryDetails() {
                             {/* Category Image */}
                             <div className="w-full h-70 rounded-lg overflow-hidden">
                                 <img
-                                    src={item.image}
+                                    src={item?.image}
                                     alt={item.categoryName}
                                     className="w-full h-full object-cover object-top flex justify-center items-center"
                                 />
